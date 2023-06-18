@@ -29,7 +29,7 @@ with left_column:
     """
     )
 with right_column:
-    st.image('pages/gaissa_logo.png')
+    st.image('figures/gaissa_logo.png')
 
 
 st.markdown(

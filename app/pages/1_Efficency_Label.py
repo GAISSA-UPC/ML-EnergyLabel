@@ -26,7 +26,7 @@ sheet = client.open("HFStreamlit").sheet1
 
 
 
-with open('tags_metadata.yaml') as file:
+with open('../metadata/tags_metadata.yaml') as file:
     tags_metadata = yaml.safe_load(file)
 
 def click_unclick(key):
@@ -288,8 +288,6 @@ def gather_environment_input():
     """
 
     with st.expander("Environment"):
-        cpus = pd.read_csv('datasets/cpus.csv')
-        gpus = pd.read_csv('datasets/gpus.csv')
         st.markdown("<p style='text-align: center;'>CPUs</p>", unsafe_allow_html=True)
         st.markdown("<hr style='margin-top: 0; margin-bottom: 0'>", unsafe_allow_html=True)
         num_cores = st.text_input("Number of cores")
@@ -426,7 +424,7 @@ def gather_attributes_with_other(additional_selectboxes, additional_other_option
         other: dictionary with the values of the other form fields
     """
 
-    gpus, cpus, locations = pd.read_csv('datasets/gpus.csv'), pd.read_csv('datasets/cpus.csv'), pd.read_csv('datasets/locations.csv')
+    gpus, cpus, locations = pd.read_csv('../datasets/gpus.csv'), pd.read_csv('../datasets/cpus.csv'), pd.read_csv('../datasets/locations.csv')
     continent = additional_selectboxes['continent_selectbox'].selectbox("Continent", [''] + list(locations['continentName'].unique()))
     source = create_selectbox_with_other(additional_selectboxes['source_selectbox'], additional_other_options['source_other'], df, 'source')
     domain = create_selectbox_with_other(additional_selectboxes['domain_selectbox'], additional_other_options['domain_other'], df, 'domain')
@@ -608,7 +606,8 @@ def handle_form_submission(df, values_dict, warnings_dict, units_dict, to_includ
     if not check_attributes(values_dict, warnings_dict):
         st.warning('Please fix the warnings before submitting.')
         st.stop()
- 
+    
+    
     if to_include == 'Yes' and values_dict['modelId'] in df['modelId'].values:
         st.warning('This model already exists in the dataset.')
         st.stop()

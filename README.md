@@ -35,7 +35,7 @@ You can access the deployed app at [energy-label.streamlit.app](https://energy-l
 
 ## Setup and Execution
 
-1. Set up a Python virtual environment (optional, but recommended). We used Python 3.10.11 for this study.
+1. Set up a Python virtual environment (optional, but recommended). We used Python 3.10.11 for this project.
 2. Install the required Python packages using `pip install -r requirements.txt`. Don't forget to install Streamlit with `pip install streamlit` if you want to run the web app locally.
 3. If you're planning to use the data analysis part, you need to handle the datasets. We use DVC to manage large datasets.
     1. Install DVC, `pip install dvc`.
@@ -44,17 +44,9 @@ You can access the deployed app at [energy-label.streamlit.app](https://energy-l
 4. For the data analysis part, open the Jupyter notebooks in the `code/` folder and follow the instructions in each notebook.
 5. To run the web-application locally, navigate to the `app/` folder and run `streamlit run Home.py`.
 
-Remember to cite the original project when using this code for your own research.
+Remember to cite the original project when using this code for your own research!
 
 ## Datasets
 
 This project uses several datasets, which are managed with DVC due to their size. These datasets can be found in the `datasets/` directory after running `dvc pull`.
-
-To add a dataset to DVC:
-
-1. Navigate to the directory containing your data.
-2. Run `dvc add YourLargeDataset.csv`.
-3. Run `dvc push` to send the data to the remote storage.
-
-You should see a new `.dvc` file in your directory, which you should commit to your git repository. This file tracks the location and version of your dataset.
 
