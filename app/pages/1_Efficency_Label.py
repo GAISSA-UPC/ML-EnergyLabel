@@ -564,6 +564,7 @@ def prepare_input_for_googlesheet(values_dict):
     values_dict['units'] = str(values_dict['units'])
     values_dict['library_name'] = str(values_dict['library_name'])
 
+    
     values_to_add = list(values_dict.values())
     return ['' if pd.isnull(value) else value for value in values_to_add]
 

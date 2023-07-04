@@ -49,7 +49,7 @@ df_co2 = df_co2[df_co2['co2_eq_emissions'] > 0]
 
 
 # --- SIDEBAR --- filtering options
-    
+
 
 st.sidebar.header("Apply the Filters: ")
 

@@ -8,7 +8,7 @@ The data analysis seeks to answer two main research questions:
 1. How do ML model creators measure and report carbon emissions on Hugging Face?
 2. What aspects impact the carbon emissions of training ML models?
 
-The web-application is a user-friendly tool that allows users to estimate the energy efficiency of their models, visualize carbon emissions data from Hugging Face models, and add their own models to the dataset.
+The web-application is a user-friendly tool that allows users to estimate the energy efficiency of their models through an energy label, visualize carbon emissions data from Hugging Face models, and add their own models to the dataset.
 
 You can access the deployed app at [energy-label.streamlit.app](https://energy-label.streamlit.app).
 

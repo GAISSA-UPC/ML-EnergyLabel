@@ -18,6 +18,8 @@ def read_sheet():
     sheet = client.open("HFStreamlit").sheet1
     return sheet
 
+
+
 @st.cache_data(show_spinner=False)
 def get_data_from_sheet(_sheet):
     """Reads the Google Sheet and returns a pandas dataframe
@@ -53,6 +55,16 @@ def cols_preprocess(df):
     df['co2_reported'] = pd.to_numeric(df['co2_reported'], errors='coerce')
     df[['downloads', 'likes', 'co2_reported']] = df[['downloads', 'likes', 'co2_reported']].astype('Int64')
     df['library_name'] = df['library_name'].apply(lambda libraries:  ast.literal_eval(libraries) if not isinstance(libraries, list) else libraries)
+    
+    df = df.replace('', None)
+
+    df['domain'] = df['domain'].fillna('Not Specified')
+    df['training_type'] = df['training_type'].fillna('Not Specified')
+    df['source'] = df['source'].fillna('Not Specified')
+    df['geographical_location'] = df['geographical_location'].fillna('Not Specified')
+    df['environment'] = df['environment'].fillna('Not Specified')
+    df['library_name'] = df['library_name'].fillna('Not Specified')
+
     df = df.replace({pd.NA: np.nan})
     return df
 
