@@ -10,7 +10,7 @@ scope = ['https://spreadsheets.google.com/feeds','https://www.googleapis.com/aut
 
 
 
-@st.cache_data(show_spinner=False)
+@st.cache_data(show_spinner=False, ttl=300)
 def read_sheet():
     """Reads the Google Sheet and returns a gspread object"""
     creds = Credentials.from_service_account_info(st.secrets['gcp_service_account'], scopes=scope)    
@@ -20,7 +20,7 @@ def read_sheet():
 
 
 
-@st.cache_data(show_spinner=False)
+@st.cache_data(show_spinner=False, ttl=300)
 def get_data_from_sheet(_sheet):
     """Reads the Google Sheet and returns a pandas dataframe
     
@@ -35,7 +35,7 @@ def get_data_from_sheet(_sheet):
     df = pd.DataFrame(data)
     return df
 
-@st.cache_data(show_spinner=False)
+@st.cache_data(show_spinner=False, ttl=300)
 def cols_preprocess(df):
     """Preprocesses the columns of the dataframeç
     
@@ -70,7 +70,7 @@ def cols_preprocess(df):
 
 
 
-@st.cache_data(show_spinner=False)
+@st.cache_data(show_spinner=False, ttl=300)
 def read_data(_sheet=None):
     """
     Reads the Google Sheet and returns a pandas dataframe with the data preprocessed
