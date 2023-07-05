@@ -21,8 +21,8 @@ with left_column:
     st.markdown(
     """
 
-    This interactive web application, developed as part of the GAISSA project
-    at the GESSI research group, is designed to provide you with an in-depth
+    This interactive web application, developed as part of the [GAISSA](https://gaissa.upc.edu/en) project
+    at the [GESSI](https://gessi.upc.edu/en) research group, is designed to provide you with an in-depth
     look at the carbon emissions data for various machine learning models
     hosted on the Hugging Face Hub, and to promote sustainability within
     the AI community.
