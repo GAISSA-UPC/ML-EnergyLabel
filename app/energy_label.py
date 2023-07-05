@@ -5,10 +5,10 @@ import ast
 
 # Weightage of different metrics for energy efficiency computation
 METRIC_WEIGHTS = {
-    'co2_eq_emissions': 0.4,
-    'size_efficency': 0.15,
-    'datasets_size_efficency': 0.15,
-    'downloads': 0.2,
+    'co2_eq_emissions': 0.35,
+    'size_efficency': 0.1,
+    'datasets_size_efficency': 0.1,
+    'downloads': 0.25,
     'performance_score': 0.2
 }
 

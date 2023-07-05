@@ -9,7 +9,7 @@ import time
 from data import read_data
 import numpy as np
 
-
+import os
 st.set_page_config(page_title='Hugging Face Dashboard',
                    page_icon=':bar_chart:',
                    layout='wide')
@@ -18,7 +18,7 @@ st.set_page_config(page_title='Hugging Face Dashboard',
 # Based on https://github.com/GreenAlgorithms/green-algorithms-tool reference values
 def emissions_to_equivalence(co2):
     """Converts the emissions to a flight equivalence"""
-    ref_df = pd.read_csv('../datasets/referenceValues.csv', header=1)
+    ref_df = pd.read_csv('datasets/referenceValues.csv', header=1)
     flight_PAR_LON = ref_df[ref_df['variable'] == 'flight_PAR-LON']['value'].values[0]
     flight_NY_SF = ref_df[ref_df['variable'] == 'flight_NY-SF']['value'].values[0]
     flight_NY_MEL = ref_df[ref_df['variable'] == 'flight_NYC-MEL']['value'].values[0]
@@ -32,7 +32,6 @@ def emissions_to_equivalence(co2):
 # we read the data from google sheet
 with st.spinner('Loading data...'):
     df = read_data()
-
 
 # we read carbon emissions data and assign energy labels
 df_co2 = df[df['co2_reported'] == True]

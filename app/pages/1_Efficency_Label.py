@@ -26,7 +26,7 @@ sheet = client.open("HFStreamlit").sheet1
 
 
 
-with open('../metadata/tags_metadata.yaml') as file:
+with open('metadata/tags_metadata.yaml') as file:
     tags_metadata = yaml.safe_load(file)
 
 def click_unclick(key):
@@ -424,7 +424,7 @@ def gather_attributes_with_other(additional_selectboxes, additional_other_option
         other: dictionary with the values of the other form fields
     """
 
-    gpus, cpus, locations = pd.read_csv('../datasets/gpus.csv'), pd.read_csv('../datasets/cpus.csv'), pd.read_csv('../datasets/locations.csv')
+    gpus, cpus, locations = pd.read_csv('datasets/gpus.csv'), pd.read_csv('datasets/cpus.csv'), pd.read_csv('datasets/locations.csv')
     continent = additional_selectboxes['continent_selectbox'].selectbox("Continent", [''] + list(locations['continentName'].unique()))
     source = create_selectbox_with_other(additional_selectboxes['source_selectbox'], additional_other_options['source_other'], df, 'source')
     domain = create_selectbox_with_other(additional_selectboxes['domain_selectbox'], additional_other_options['domain_other'], df, 'domain')

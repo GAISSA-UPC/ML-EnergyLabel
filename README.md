@@ -42,7 +42,7 @@ You can access the deployed app at [energy-label.streamlit.app](https://energy-l
     2. Set up the DVC remote storage following the instructions on the [DVC remote storage page](https://dvc.org/doc/command-reference/remote).
     3. Pull the data from the remote storage with `dvc pull`.
 4. For the data analysis part, open the Jupyter notebooks in the `code/` folder and follow the instructions in each notebook.
-5. To run the web-application locally, navigate to the `app/` folder and run `streamlit run Home.py`.
+5. To run the web-application locally, navigate to the root folder and run `streamlit run app/Home.py`.
 
 Remember to cite the original project when using this code for your own research!
 
