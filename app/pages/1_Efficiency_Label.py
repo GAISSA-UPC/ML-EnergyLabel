@@ -48,7 +48,7 @@ def standardize_name(name: str) -> str:
 
 
 st.set_page_config(
-    page_title="Efficency Label Generation",
+    page_title="Efficiency Label Generation",
     page_icon=":bar_chart:",
 )
 
@@ -480,7 +480,7 @@ def transform_values_by_unit(values_dict, units_dict):
 
 def get_size_efficency(values_dict, size_attribute):
     """
-    Calculates the efficency of a 'size' attribute of the model.
+    Calculates the efficiency of a 'size' attribute of the model.
     
     Args:
         values_dict: dictionary with the values of the attributes

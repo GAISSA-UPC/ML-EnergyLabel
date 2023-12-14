@@ -49,8 +49,8 @@ _, left_column, right_column, _ = st.columns(4)
 
 
 with left_column:
-    if st.button('Generate Efficency Label'):
-        switch_page('efficency label')
+    if st.button('Generate Efficiency Label'):
+        switch_page('efficiency label')
 with right_column:
     if st.button('Open Hugging Face Visualization'):
         switch_page('data visualization')

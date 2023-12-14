@@ -168,7 +168,7 @@ with middle_column:
     st.subheader(f"CO2e {round(average_carbon_emissions/1000,2):,} Kg", help = emissions_to_equivalence(average_carbon_emissions))
 
 with right_column:
-    st.subheader("Most Common Effficency Rating:")
+    st.subheader("Most Common Efficiency Rating:")
     most_common_rating = rating_to_star_mapping[df_co2_filtered['compound_rating'].value_counts().idxmax()]
     st.subheader(':star:'*most_common_rating + '★'*(5-most_common_rating))
 
@@ -200,10 +200,10 @@ with right_column:
     plots.scatter_models(df_co2_filtered, xmetric='co2_eq_emissions', ymetric='performance_score', xlabel='CO2e (log index scale)', ylabel='Performance Score (index scale)',
                           xlim=(df_co2_filtered['co2_eq_emissions_index'].min(), df_co2_filtered['co2_eq_emissions_index'].max()),
                           ylim=(performance_score_index_min,performance_score_index_max), boundaries=boundaries, named_pos=[], xlog=True, width=5, height=4)
-    st.subheader("CO2e vs Model Size Efficency Tradeoff")
+    st.subheader("CO2e vs Model Size Efficiency Tradeoff")
     size_efficency_index_max = df_co2_filtered['size_efficency_index'].max() + 0.1*df_co2_filtered['size_efficency_index'].max()
     size_efficency_index_min = df_co2_filtered['size_efficency_index'].min() - 0.1*df_co2_filtered['size_efficency_index'].min() 
-    plots.scatter_models(df_co2_filtered, xmetric='co2_eq_emissions', ymetric='size_efficency', xlabel='CO2e (log index scale)', ylabel='Size Efficency (index scale)',
+    plots.scatter_models(df_co2_filtered, xmetric='co2_eq_emissions', ymetric='size_efficency', xlabel='CO2e (log index scale)', ylabel='Size Efficiency (index scale)',
                           xlim=(df_co2_filtered['co2_eq_emissions_index'].min(), df_co2_filtered['co2_eq_emissions_index'].max()),
                           ylim=(size_efficency_index_min,size_efficency_index_max), boundaries=boundaries, named_pos=[], xlog=True, ylog=True, width=5, height=4)
 
