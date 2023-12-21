@@ -81,6 +81,8 @@ st.markdown(
     and are calculated considering factors such as CO2 emissions, model size, reusability, and performance. You can also compare your model's efficiency label with others in our database.
      
     You can estimate the CO2 emissions using tools such as [code carbon](https://codecarbon.io/) or [MLCO2 calculator](https://mlco2.github.io/impact/).
+
+    Access our preliminary survey for further contact and feedback [here](https://forms.gle/KiMDmWxJnxVxdRHL6).
     """
 )
 
